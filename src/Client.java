@@ -1,3 +1,4 @@
+//готово
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,7 +10,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 
-public class EchoClient extends JFrame {
+public class Client extends JFrame {
     private final String SERVER_ADDR = "localhost";
     private final int SERVER_PORT = 8189;
 
@@ -20,7 +21,7 @@ public class EchoClient extends JFrame {
     private DataInputStream in;
     private DataOutputStream out;
 
-    public EchoClient() {
+    public Client() {
         try {
             openConnection();
         } catch (IOException e) {
@@ -136,7 +137,7 @@ public class EchoClient extends JFrame {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new EchoClient();
+                new Client();
             }
         });
     }
