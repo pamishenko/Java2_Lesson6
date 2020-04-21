@@ -2,7 +2,7 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class EchoServer {
+public class Server {
     public static void main(String[] args) throws IOException {
         Socket socket = null;
         try (ServerSocket serverSocket = new ServerSocket(8189)) {
@@ -53,7 +53,7 @@ public class EchoServer {
                         }
                         try {
                             out.writeUTF("Сообщение от сервера: " + str);
-                            int i = 3+5;
+                            int i = 3+5; // Не понимаю, почему перестает работать когда в этом блоке убираю доп операции
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -69,7 +69,6 @@ public class EchoServer {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
     }
 }
